@@ -1,0 +1,19 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: repo
+    app.kubernetes.io/component: repo
+    app.kubernetes.io/instance: repo
+  name: repo
+spec:
+  port:
+    targetPort: 8080-tcp
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: repo
+    weight: 100
+  wildcardPolicy: None

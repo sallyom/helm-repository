@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: repo
+    app.kubernetes.io/component: repo
+    app.kubernetes.io/instance: repo
+  name: repo
+spec:
+  selector:
+    matchLabels:
+      deployment: repo
+  template:
+    metadata:
+      labels:
+        deployment: repo
+    spec:
+      containers:
+      - image: registry.redhat.io/ubi9/httpd-24:latest
+        imagePullPolicy: IfNotPresent
+        name: httpd
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        - containerPort: 8443
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /var/www/html
+          name: repo
+        - mountPath: /var/www/html/helm-charts/
+          name: charts-index
+        - mountPath: /var/www/html/helm-charts/charts
+          name: charts-charts
+      securityContext: {}
+      volumes:
+      - name: repo
+        persistentVolumeClaim:
+          claimName: repo
+      - configMap:
+          defaultMode: 420
+          name: charts-charts
+        name: charts-charts
+      - configMap:
+          defaultMode: 420
+          name: charts-index
+        name: charts-index
