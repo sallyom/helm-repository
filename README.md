@@ -33,9 +33,8 @@ cd path/to/sigstore/helm-charts
 git remote add sallyom git@github.com:sallyom/helm-charts
 git fetch sallyom && git checkout -b v2-charts sallyom/v2-sigstore-charts
 helm package charts/[chart-you-want-to-update]
-# copy any updated charts .tgz files in charts/scaffold/charts/.
-# we'll move the files also to the index/charts/. below
 cp *.tgz charts/scaffold/charts/.
+# we'll move the files also to the index/charts/. below
 helm package charts/scaffold
 cd back/to/index/dir
 mv path/to/sigstore/helm-charts/*.tgz charts/.
@@ -67,7 +66,7 @@ oc create configmap -n securesign-helm charts-index --from-file ./index.yaml
 oc delete pods --all -n securesign-helm
 ```
 
-go to [repository](https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts),
+go to [repository](https://repo-securesign-helm.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts),
 confirm that it's been updated.
 
 #### Update scaffolding chart from securesign/sigstore-ocp v2-charts branch
