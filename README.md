@@ -66,7 +66,24 @@ oc create configmap -n securesign-helm charts-index --from-file ./index.yaml
 oc delete pods --all -n securesign-helm
 ```
 
-go to [repository](https://repo-securesign-helm.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts),
+go to [repository](https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts),
+confirm that it's been updated.
+
+#### Update scaffolding chart from securesign/sigstore-ocp v2-charts branch
+
+Update the securesign/sigstore-ocp `v2-charts branch` scaffolding chart that wraps sallyom/helm-charts `v2-sigstore-charts branch` scaffold chart:
+
+```bash
+cd ../
+helm repo index index/ --url https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts
+oc delete -n securesign-helm-v2 configmap charts-charts
+oc delete -n securesign-helm-v2 configmap charts-index
+oc create configmap -n securesign-helm-v2 charts-charts --from-file ./charts/
+oc create configmap -n securesign-helm-v2 charts-index --from-file ./index.yaml
+oc delete pods --all -n securesign-helm-v2
+```
+
+go to [repository](https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts),
 confirm that it's been updated.
 
 #### Update scaffolding chart from securesign/sigstore-ocp v2-charts branch
