@@ -4,7 +4,7 @@ entries:
   - annotations:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
-    created: "2023-08-29T17:14:31.767157556-04:00"
+    created: "2023-08-29T17:32:42.065909502-04:00"
     description: A Library Helm Chart containing common logic for use by Sigstore
       charts
     digest: 0c05923968f8dcca24c2b133a69146072da39d3db0c6c2fea888731748a2fa94
@@ -35,7 +35,7 @@ entries:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
     appVersion: 0.3.0
-    created: "2023-08-29T17:14:31.768832752-04:00"
+    created: "2023-08-29T17:32:42.067606415-04:00"
     dependencies:
     - name: common
       repository: https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts
@@ -63,7 +63,7 @@ entries:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
     appVersion: 1.4.0
-    created: "2023-08-29T17:14:31.772112178-04:00"
+    created: "2023-08-29T17:32:42.070720112-04:00"
     dependencies:
     - condition: ctlog.enabled
       name: ctlog
@@ -87,7 +87,7 @@ entries:
   - annotations:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
-    created: "2023-08-29T17:14:31.783578797-04:00"
+    created: "2023-08-29T17:32:42.081947538-04:00"
     dependencies:
     - condition: fulcio.enabled
       name: fulcio
@@ -128,13 +128,13 @@ entries:
     version: 2.0.0
   scaffolding:
   - apiVersion: v2
-    created: "2023-08-29T17:14:31.795409805-04:00"
+    created: "2023-08-29T17:32:42.094866802-04:00"
     dependencies:
     - name: scaffold
       repository: https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts
       version: 2.0.0
     description: Wrapper of Sigstore scaffolding Helm chart opinionated for OpenShift
-    digest: c339e3be673be240df857b9ac0b671d4a171d4143edf95516c8c9f2d88b37192
+    digest: adf6b79cfb9c894808ba1ce614777d50c1eb53de7608dc7024782c28f7fae606
     name: scaffolding
     type: application
     urls:
@@ -150,7 +150,7 @@ entries:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
     appVersion: 0.4.6
-    created: "2023-08-29T17:14:31.796283625-04:00"
+    created: "2023-08-29T17:32:42.095724662-04:00"
     dependencies:
     - name: common
       repository: https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts
@@ -169,4 +169,4 @@ entries:
     urls:
     - https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts/charts/tuf-0.2.0.tgz
     version: 0.2.0
-generated: "2023-08-29T17:14:31.766734744-04:00"
+generated: "2023-08-29T17:32:42.065459576-04:00"
