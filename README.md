@@ -14,8 +14,8 @@ the upstream `scaffold` chart, and/or the individual charts at [sigstore/helm-ch
 cd path/to/securesign/sigstore-ocp/
 git checkout main or v2-charts, depending on which scaffolding chart you are updating
 helm package .
-mv scaffold-*.tgz path/to/index/charts/.
-cd back/to/index/dir
+mv scaffold-*.tgz path/to/helm-repository/charts/.
+cd back/to/helm-repository/dir
 ```
 
 Now follow the [update helm repository server](#update-helm-repository-server) to push the updated repository to the OpenShift cluster
@@ -34,9 +34,9 @@ git remote add sallyom git@github.com:sallyom/helm-charts
 git fetch sallyom && git checkout -b v2-charts sallyom/v2-sigstore-charts
 helm package charts/[chart-you-want-to-update]
 cp *.tgz charts/scaffold/charts/.
-# we'll move the files also to the index/charts/. below
+# we'll move the files also to the helm-repository/charts/. below
 helm package charts/scaffold
-cd back/to/index/dir
+cd back/to/helm-repository/dir
 mv path/to/sigstore/helm-charts/*.tgz charts/.
 ```
 
@@ -58,7 +58,8 @@ Update the securesign/sigstore-ocp `main branch` scaffolding chart that wraps si
 
 ```bash
 cd ../
-helm repo index index/ --url https://repo-securesign-helm.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts
+helm repo index helm-repository/ --url https://repo-securesign-helm.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts
+cd helm-repository
 oc delete -n securesign-helm configmap charts-charts
 oc delete -n securesign-helm configmap charts-index
 oc create configmap -n securesign-helm charts-charts --from-file ./charts/
@@ -75,7 +76,8 @@ Update the securesign/sigstore-ocp `v2-charts branch` scaffolding chart that wra
 
 ```bash
 cd ../
-helm repo index index/ --url https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts
+helm repo index helm-repository/ --url https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts
+cd helm-repository
 oc delete -n securesign-helm-v2 configmap charts-charts
 oc delete -n securesign-helm-v2 configmap charts-index
 oc create configmap -n securesign-helm-v2 charts-charts --from-file ./charts/
@@ -92,7 +94,8 @@ Update the securesign/sigstore-ocp `v2-charts branch` scaffolding chart that wra
 
 ```bash
 cd ../
-helm repo index index/ --url https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts
+helm repo index helm-repository/ --url https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts
+cd helm-repository
 oc delete -n securesign-helm-v2 configmap charts-charts
 oc delete -n securesign-helm-v2 configmap charts-index
 oc create configmap -n securesign-helm-v2 charts-charts --from-file ./charts/
