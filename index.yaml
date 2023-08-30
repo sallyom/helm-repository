@@ -4,10 +4,10 @@ entries:
   - annotations:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
-    created: "2023-08-29T23:26:55.464304226-04:00"
+    created: "2023-08-31T12:14:16.88307254-04:00"
     description: A Library Helm Chart containing common logic for use by Sigstore
       charts
-    digest: 0c05923968f8dcca24c2b133a69146072da39d3db0c6c2fea888731748a2fa94
+    digest: 5cbbfab97f76814005f446ff697a6c5ce855fd62127e0167878f0a8a85d3bb2e
     home: https://sigstore.dev/
     keywords:
     - common
@@ -19,7 +19,7 @@ entries:
     name: common
     type: library
     urls:
-    - https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/charts/common-0.2.0.tgz
+    - https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts/charts/common-0.2.0.tgz
     version: 0.2.0
   ctlog:
   - annotations:
@@ -35,13 +35,13 @@ entries:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
     appVersion: 0.3.0
-    created: "2023-08-29T23:26:55.466025292-04:00"
+    created: "2023-08-31T12:14:16.88489764-04:00"
     dependencies:
     - name: common
       repository: https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts
       version: 0.2.0
     description: Certificate Log
-    digest: bdbef7c24f108a3b4c266aaf3c5659d78eb227321879cbb3ee9ce9f6d998c18f
+    digest: 45f6f03d05ee0001c4d4bcbe7c9896b8a2f729bdede3b6b3812e6c65ad3df4d5
     home: https://sigstore.dev/
     keywords:
     - security
@@ -51,7 +51,7 @@ entries:
     name: ctlog
     type: application
     urls:
-    - https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/charts/ctlog-0.3.0.tgz
+    - https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts/charts/ctlog-0.3.0.tgz
     version: 0.3.0
   fulcio:
   - annotations:
@@ -63,7 +63,7 @@ entries:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
     appVersion: 1.4.0
-    created: "2023-08-29T23:26:55.468956877-04:00"
+    created: "2023-08-31T12:14:16.888403828-04:00"
     dependencies:
     - condition: ctlog.enabled
       name: ctlog
@@ -71,7 +71,7 @@ entries:
       version: 0.3.0
     description: 'Fulcio is a free code signing Certificate Authority, built to make
       short-lived certificates available to anyone. '
-    digest: bad2527f1fcc463a34d4c8f88fd20db60f74189a3440ead15dcff27140068e9b
+    digest: 85de04f13797c468d1f4dfc132f5b054289b8641ecde55b3e0133eb34ee2d1a1
     home: https://sigstore.dev/
     keywords:
     - security
@@ -81,13 +81,13 @@ entries:
     name: fulcio
     type: application
     urls:
-    - https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/charts/fulcio-3.0.0.tgz
+    - https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts/charts/fulcio-3.0.0.tgz
     version: 3.0.0
   scaffold:
   - annotations:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
-    created: "2023-08-29T23:26:55.482342319-04:00"
+    created: "2023-08-31T12:14:16.899632544-04:00"
     dependencies:
     - condition: fulcio.enabled
       name: fulcio
@@ -114,7 +114,7 @@ entries:
       repository: https://sigstore.github.io/helm-charts
       version: 0.1.0
     description: Scaffolding the components of the sigstore architecture
-    digest: 9a545997a906104056c3bc6d01315a3ddbe6ef454083fb0c32634b4129ee77b0
+    digest: 286f0f13c46e2b0cc09eeaf85347ec66132edc27bd134a1dcfe629c8c50d5ed4
     home: https://sigstore.dev/
     keywords:
     - security
@@ -124,21 +124,21 @@ entries:
     name: scaffold
     type: application
     urls:
-    - https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/charts/scaffold-2.0.0.tgz
+    - https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts/charts/scaffold-2.0.0.tgz
     version: 2.0.0
   scaffolding:
   - apiVersion: v2
-    created: "2023-08-29T23:26:55.497781813-04:00"
+    created: "2023-08-31T12:14:16.911180188-04:00"
     dependencies:
     - name: scaffold
       repository: https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts
       version: 2.0.0
     description: Wrapper of Sigstore scaffolding Helm chart opinionated for OpenShift
-    digest: 42c12fa9824ef09d0e7b7bfea85376cf07cf4742838d04549e096ff3347e8ecc
+    digest: 0e721b90240a6dc91d15a7fb5d5489e05956346eb3319bb086a3089ffedc10ea
     name: scaffolding
     type: application
     urls:
-    - https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/charts/scaffolding-0.2.0.tgz
+    - https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts/charts/scaffolding-0.2.0.tgz
     version: 0.2.0
   tuf:
   - annotations:
@@ -150,14 +150,14 @@ entries:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
     appVersion: 0.4.6
-    created: "2023-08-29T23:26:55.498647909-04:00"
+    created: "2023-08-31T12:14:16.912039404-04:00"
     dependencies:
     - name: common
       repository: https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts
       version: 0.2.0
     description: A framework for securing software update systems - the scaffolding
       implementation
-    digest: 44ecbf59f786dc06bac5399174a6af19d3aba4d307e9334cdd6455515401764c
+    digest: 2ed0ffb70b608033255b3e8e45f6483efc40e9fedb57f5388707cde09b26cc7c
     home: https://sigstore.dev/
     maintainers:
     - name: The Sigstore Authors
@@ -167,6 +167,6 @@ entries:
     - https://github.com/sigstore/scaffolding
     type: application
     urls:
-    - https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/charts/tuf-0.2.0.tgz
+    - https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts/charts/tuf-0.2.0.tgz
     version: 0.2.0
-generated: "2023-08-29T23:26:55.463716215-04:00"
+generated: "2023-08-31T12:14:16.882640131-04:00"
