@@ -2,16 +2,16 @@ apiVersion: v1
 entries:
   scaffolding:
   - apiVersion: v2
-    created: "2023-08-25T16:06:35.120965229-04:00"
+    created: "2023-08-31T18:32:36.044668396-04:00"
     dependencies:
     - name: scaffold
       repository: https://sigstore.github.io/helm-charts
       version: x
     description: Wrapper of Sigstore scaffolding Helm chart opinionated for OpenShift
-    digest: 849e260ddfbbd6d62198f5332ede989fb583aaa9b42886bf5e0659c8f641172a
+    digest: ffee5cb29aa922dab9894349d0a46a2d25ab191b12c5cdc37614968b718ec0b3
     name: scaffolding
     type: application
     urls:
     - https://repo-securesign-helm.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts/charts/scaffolding-0.1.0.tgz
     version: 0.1.0
-generated: "2023-08-25T16:06:35.108744618-04:00"
+generated: "2023-08-31T18:32:36.033131787-04:00"
