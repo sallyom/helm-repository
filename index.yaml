@@ -4,7 +4,7 @@ entries:
   - annotations:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
-    created: "2023-09-07T18:32:13.074331048-04:00"
+    created: "2023-09-11T21:54:43.343589193-04:00"
     description: A Library Helm Chart containing common logic for use by Sigstore
       charts
     digest: 5cbbfab97f76814005f446ff697a6c5ce855fd62127e0167878f0a8a85d3bb2e
@@ -35,7 +35,7 @@ entries:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
     appVersion: 0.3.0
-    created: "2023-09-07T18:32:13.075977932-04:00"
+    created: "2023-09-11T21:54:43.34518459-04:00"
     dependencies:
     - name: common
       repository: https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts
@@ -63,7 +63,7 @@ entries:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
     appVersion: 1.4.0
-    created: "2023-09-07T18:32:13.079190244-04:00"
+    created: "2023-09-11T21:54:43.348625622-04:00"
     dependencies:
     - condition: ctlog.enabled
       name: ctlog
@@ -87,7 +87,7 @@ entries:
   - annotations:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
-    created: "2023-09-07T18:32:13.090373954-04:00"
+    created: "2023-09-11T21:54:43.359820775-04:00"
     dependencies:
     - condition: fulcio.enabled
       name: fulcio
@@ -96,11 +96,11 @@ entries:
     - condition: rekor.enabled
       name: rekor
       repository: https://sigstore.github.io/helm-charts
-      version: 1.3.6
+      version: 1.3.8
     - condition: trillian.enabled
       name: trillian
       repository: https://sigstore.github.io/helm-charts
-      version: 0.2.8
+      version: 0.2.13
     - condition: ctlog.enabled
       name: ctlog
       repository: https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts
@@ -114,7 +114,7 @@ entries:
       repository: https://sigstore.github.io/helm-charts
       version: 0.1.0
     description: Scaffolding the components of the sigstore architecture
-    digest: 286f0f13c46e2b0cc09eeaf85347ec66132edc27bd134a1dcfe629c8c50d5ed4
+    digest: 69d18e6d7dfd57b69fe56de753b4105acff9fdd876a5fd4232e12837ada3b7d6
     home: https://sigstore.dev/
     keywords:
     - security
@@ -124,54 +124,17 @@ entries:
     name: scaffold
     type: application
     urls:
-    - https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts/charts/scaffold-2.0.0.tgz
-    version: 2.0.0
+    - https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts/charts/scaffold-1.0.0.tgz
+    version: 1.0.0
   scaffolding:
-  - annotations:
-      artifacthub.io/category: integration-delivery
-      artifacthub.io/license: Apache-2.0
-      artifacthub.io/links: |
-        - name: support
-          url: https://github.com/securesign/sigstore-ocp/issues
-        - name: Chart Source
-          url: https://github.com/securesign/sigstore-ocp
-        - name: Default Image Source
-          url: ""
-      charts.openshift.io/name: Scaffolding
-      charts.openshift.io/provider: TrustedSigner
-      charts.openshift.io/supportURL: https://github.com/securesign/sigstore-ocp/issues
-    apiVersion: v2
-    created: "2023-09-07T18:32:13.112117843-04:00"
-    dependencies:
-    - alias: upstream
-      name: scaffold
-      repository: https://sigstore.github.io/helm-charts
-      version: 0.6.27
-    description: A Helm chart for deploying Sigstore scaffold chart that is opinionated
-      for OpenShift
-    digest: 84692f1d09346b38a3d438529f6886dac55cfc8dc0c2abcf7aad5757220b477a
-    keywords:
-    - sigstore
-    - sign
-    - cosign
-    kubeVersion: '>= 1.19.0-0'
-    maintainers:
-    - name: TrustedSigner
-    name: scaffolding
-    sources:
-    - https://github.com/securesign/sigstore-ocp
-    type: application
-    urls:
-    - https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts/charts/scaffolding-0.3.0.tgz
-    version: 0.3.0
   - apiVersion: v2
-    created: "2023-09-07T18:32:13.102149513-04:00"
+    created: "2023-09-11T21:54:43.379946211-04:00"
     dependencies:
     - name: scaffold
       repository: https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts
-      version: 2.0.0
-    description: Wrapper of Sigstore scaffolding Helm chart opinionated for OpenShift
-    digest: 0e721b90240a6dc91d15a7fb5d5489e05956346eb3319bb086a3089ffedc10ea
+      version: 1.0.0
+    description: Sigstore scaffolding Helm chart opinionated for OpenShift
+    digest: 844d0ac2fec9680c8ac20af6255b5f4969015b27f63ff37715f1e5180abe18b5
     name: scaffolding
     type: application
     urls:
@@ -181,20 +144,20 @@ entries:
   - annotations:
       artifacthub.io/images: |
         - name: scaffolding-tuf
-          image: ghcr.io/sigstore/scaffolding/server@sha256:719ea3fe44c52af5a5fedab2168429872e37e97b9f063977fc164d60a5a14b53
+          image: ghcr.io/sigstore/scaffolding/server:v0.6.7@sha256:c77d098e0e62f791cc87b63ae43a5fea505225e0ec38686c4a392c0cad7238bf
         - name: k8s-tools
           image: docker.io/alpine/k8s@sha256:fb0d2db81fb0f98abb1adf5246d6f0f4d19f34031afe4759cb7ad8e2eb8d2c01
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
-    appVersion: 0.4.6
-    created: "2023-09-07T18:32:13.113024446-04:00"
+    appVersion: 0.7.0
+    created: "2023-09-11T21:54:43.3807083-04:00"
     dependencies:
     - name: common
       repository: https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts
       version: 0.2.0
     description: A framework for securing software update systems - the scaffolding
       implementation
-    digest: 2ed0ffb70b608033255b3e8e45f6483efc40e9fedb57f5388707cde09b26cc7c
+    digest: 27e954b8e9c06e9cb101793e4bcc97fc1363461f79c33d1dbfc777b9d18077bf
     home: https://sigstore.dev/
     maintainers:
     - name: The Sigstore Authors
@@ -206,4 +169,4 @@ entries:
     urls:
     - https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts/charts/tuf-0.2.0.tgz
     version: 0.2.0
-generated: "2023-09-07T18:32:13.073872426-04:00"
+generated: "2023-09-11T21:54:43.343129579-04:00"
