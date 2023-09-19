@@ -4,7 +4,7 @@ entries:
   - annotations:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
-    created: "2023-09-11T21:54:43.343589193-04:00"
+    created: "2023-09-12T23:53:46.403402926-04:00"
     description: A Library Helm Chart containing common logic for use by Sigstore
       charts
     digest: 5cbbfab97f76814005f446ff697a6c5ce855fd62127e0167878f0a8a85d3bb2e
@@ -35,7 +35,7 @@ entries:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
     appVersion: 0.3.0
-    created: "2023-09-11T21:54:43.34518459-04:00"
+    created: "2023-09-12T23:53:46.405135532-04:00"
     dependencies:
     - name: common
       repository: https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts
@@ -63,7 +63,7 @@ entries:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
     appVersion: 1.4.0
-    created: "2023-09-11T21:54:43.348625622-04:00"
+    created: "2023-09-12T23:53:46.408254252-04:00"
     dependencies:
     - condition: ctlog.enabled
       name: ctlog
@@ -87,7 +87,7 @@ entries:
   - annotations:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
-    created: "2023-09-11T21:54:43.359820775-04:00"
+    created: "2023-09-12T23:53:46.420298499-04:00"
     dependencies:
     - condition: fulcio.enabled
       name: fulcio
@@ -127,8 +127,45 @@ entries:
     - https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts/charts/scaffold-1.0.0.tgz
     version: 1.0.0
   scaffolding:
+  - annotations:
+      artifacthub.io/category: integration-delivery
+      artifacthub.io/license: Apache-2.0
+      artifacthub.io/links: |
+        - name: support
+          url: https://github.com/securesign/sigstore-ocp/issues
+        - name: Chart Source
+          url: https://github.com/securesign/sigstore-ocp
+        - name: Default Image Source
+          url: ""
+      charts.openshift.io/name: Scaffolding
+      charts.openshift.io/provider: TrustedSigner
+      charts.openshift.io/supportURL: https://github.com/securesign/sigstore-ocp/issues
+    apiVersion: v2
+    created: "2023-09-12T23:53:46.462315708-04:00"
+    dependencies:
+    - alias: upstream
+      name: scaffold
+      repository: https://sigstore.github.io/helm-charts
+      version: 0.6.28
+    description: A Helm chart for deploying Sigstore scaffold chart that is opinionated
+      for OpenShift
+    digest: a89ea116c52f348c1c6492916a353dbaceacd6d3f4c475c428b31256e923e5fa
+    keywords:
+    - sigstore
+    - sign
+    - cosign
+    kubeVersion: '>= 1.19.0-0'
+    maintainers:
+    - name: TrustedSigner
+    name: scaffolding
+    sources:
+    - https://github.com/securesign/sigstore-ocp
+    type: application
+    urls:
+    - https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts/charts/scaffolding-0.3.0.tgz
+    version: 0.3.0
   - apiVersion: v2
-    created: "2023-09-11T21:54:43.379946211-04:00"
+    created: "2023-09-12T23:53:46.451990846-04:00"
     dependencies:
     - name: scaffold
       repository: https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts
@@ -140,6 +177,43 @@ entries:
     urls:
     - https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts/charts/scaffolding-0.2.0.tgz
     version: 0.2.0
+  - annotations:
+      artifacthub.io/category: integration-delivery
+      artifacthub.io/license: Apache-2.0
+      artifacthub.io/links: |
+        - name: support
+          url: https://github.com/securesign/sigstore-ocp/issues
+        - name: Chart Source
+          url: https://github.com/securesign/sigstore-ocp
+        - name: Default Image Source
+          url: ""
+      charts.openshift.io/name: Scaffolding
+      charts.openshift.io/provider: TrustedSigner
+      charts.openshift.io/supportURL: https://github.com/securesign/sigstore-ocp/issues
+    apiVersion: v2
+    created: "2023-09-12T23:53:46.431428511-04:00"
+    dependencies:
+    - alias: scaffold
+      name: scaffold
+      repository: https://sigstore.github.io/helm-charts
+      version: 0.6.28
+    description: A Helm chart for deploying Sigstore scaffold chart that is opinionated
+      for OpenShift
+    digest: 7eb5dc72e775ff81e58e8b11af91c044e6fcb1c0dbf8a911049f5cafcdc6012e
+    keywords:
+    - sigstore
+    - sign
+    - cosign
+    kubeVersion: '>= 1.19.0-0'
+    maintainers:
+    - name: TrustedSigner
+    name: scaffolding
+    sources:
+    - https://github.com/securesign/sigstore-ocp
+    type: application
+    urls:
+    - https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts/charts/scaffolding-0.1.0.tgz
+    version: 0.1.0
   tuf:
   - annotations:
       artifacthub.io/images: |
@@ -150,7 +224,7 @@ entries:
       artifacthub.io/license: Apache-2.0
     apiVersion: v2
     appVersion: 0.7.0
-    created: "2023-09-11T21:54:43.3807083-04:00"
+    created: "2023-09-12T23:53:46.463090519-04:00"
     dependencies:
     - name: common
       repository: https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts
@@ -169,4 +243,4 @@ entries:
     urls:
     - https://repo-securesign-helm-v2.apps.open-svc-sts.k1wl.p1.openshiftapps.com/helm-charts/charts/tuf-0.2.0.tgz
     version: 0.2.0
-generated: "2023-09-11T21:54:43.343129579-04:00"
+generated: "2023-09-12T23:53:46.402982719-04:00"
